@@ -1,0 +1,35 @@
+/* BOUTON PRINCIPAL */
+.basic-button {
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient($color2, $color1);
+    margin: 27px auto;
+    box-shadow: 0 4px 10px 0 #00000040;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 13px 18.75px ;
+}
+
+.basic-button:hover {
+    background: linear-gradient(#FF79DA, #a980db);
+    box-shadow: 0 4px 10px 0 #00000091;
+    transition: 1s ease-out;
+}
+
+/* BOUTON RETOUR */
+.back-button {
+    position: absolute;
+    top: 18px;
+    left: 17px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    background: none;
+
+    i {
+        font-size: 20px;
+        color: #353535;
+    }
+}
