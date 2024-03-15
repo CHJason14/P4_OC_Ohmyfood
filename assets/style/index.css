@@ -246,20 +246,25 @@ section h2 {
 .restaurant-container .restaurants-cards a .card .card-content i {
   font-size: 22px;
 }
-.restaurant-container .restaurants-cards a .card .card-content svg {
+
+.like-content2 i {
   position: relative;
   left: -26px;
-  top: 3px;
   opacity: 0;
-  width: 23px;
-  fill: url(#gradient-svg);
+  width: 25px;
+  opacity: 0;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
 }
 
-svg:hover {
+.like-content2 i:hover {
   -webkit-animation: apparaitre 1s;
           animation: apparaitre 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .loader-container {
@@ -612,19 +617,23 @@ footer .list_footer i {
 .menu-container .title-menu i {
   font-size: 22px;
 }
-.menu-container .title-menu svg {
+.menu-container .like-content2 i {
   position: relative;
   left: -22px;
-  top: -2px;
   opacity: 0;
-  width: 23px;
-  fill: url(#gradient-svg);
+  width: 25px;
+  opacity: 0;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
 }
-.menu-container svg:hover {
+.menu-container .like-content2 i:hover {
   -webkit-animation: apparaitre 1s;
           animation: apparaitre 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 .menu-container .menu-content {
   display: -webkit-box;

@@ -144,24 +144,29 @@ section {
                         font-size: 22px;
                     }
                 
-                    svg {
-                        position: relative;
-                        left: -26px;
-                        top: 3px;
-                        opacity: 0;
-                        width: 23px;
-                        fill: url(#gradient-svg);
-                    } 
                 }
             }
         }
     }
 }
 
-svg:hover{
+.like-content2 i {
+    position: relative;
+    left: -26px;
+    opacity: 0;
+    width: 25px;
+    opacity: 0;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+}
+
+.like-content2 i:hover {
     animation: apparaitre 1s;
     animation-fill-mode: forwards;
-    }
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
 
 .loader-container {
     animation: disappear;
