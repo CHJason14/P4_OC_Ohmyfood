@@ -4,6 +4,11 @@ nav {
     align-items: center;
     text-align: center;
 
+    visibility: hidden;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+
     h2 {
         font-weight: 700;
         font-size: 24px;

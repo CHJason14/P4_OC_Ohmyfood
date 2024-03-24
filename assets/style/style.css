@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,6 +24,13 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  visibility: hidden;
+  -webkit-animation: appear 2s;
+          animation: appear 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 nav h2 {
   font-weight: 700;
@@ -80,6 +88,13 @@ section h2 {
 
 .instruction {
   background-color: white;
+  visibility: hidden;
+  -webkit-animation: appear 2s;
+          animation: appear 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 .instruction .step-container {
   display: -webkit-box;
@@ -109,6 +124,9 @@ section h2 {
   color: white;
   background-color: #9356DC;
   border-radius: 50px;
+  padding: 3px;
+  padding-bottom: 2px;
+  padding-top: 4px;
   width: 24px;
   height: 24px;
   text-align: center;
@@ -125,6 +143,13 @@ section h2 {
 .restaurant-container {
   background-color: #F6F6F6;
   position: relative;
+  visibility: hidden;
+  -webkit-animation: appear 2s;
+          animation: appear 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 .restaurant-container .restaurants-cards {
   display: -webkit-box;
@@ -147,13 +172,6 @@ section h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  visibility: hidden;
-  -webkit-animation: appear 2s;
-          animation: appear 2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
 }
 .restaurant-container .restaurants-cards a {
   display: -webkit-box;
@@ -254,20 +272,25 @@ section h2 {
   width: 25px;
   opacity: 0;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text; /* Faire apparaitre que l'intérieur de l'icone */
+  -webkit-text-fill-color: transparent; /* Brackground linear sur l'icone */
+  -webkit-animation: disparaitre 1s;
+          animation: disparaitre 1s;
 }
 
-.like-content2 i:hover {
+.like-content2 i:hover { /* Animation du like au hover */
   -webkit-animation: apparaitre 1s;
           animation: apparaitre 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }
 
-.loader-container {
+.loader-container { /* Position du loader au centre de la page et animation d'une durée de 3s */
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-75px);
+          transform: translateX(-75px);
   -webkit-animation: disappear;
           animation: disappear;
   -webkit-animation-fill-mode: forwards;
@@ -276,17 +299,16 @@ section h2 {
           animation-delay: 3s;
 }
 
-.loader {
-  width: 90px;
-  height: 90px;
+.loader { /* Loader */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   position: absolute;
-  top: 40%;
   -webkit-animation: rotate 1s linear infinite;
           animation: rotate 1s linear infinite;
 }
 
-.loader::before, .loader::after {
+.loader::before, .loader::after { /* Barre grise du loader */
   content: "";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -298,14 +320,14 @@ section h2 {
           animation: prixClipFix 2s linear infinite;
 }
 
-.loader::after {
+.loader::after { /* Barre rose du loader */
   inset: 8px;
   -webkit-transform: rotate3d(90, 90, 0, 180deg);
           transform: rotate3d(90, 90, 0, 180deg);
   border-color: #a980db;
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes rotate { /* Animation Rotation du loader */
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -316,7 +338,7 @@ section h2 {
   }
 }
 
-@keyframes rotate {
+@keyframes rotate { /* Animation Rotation du loader */
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -326,7 +348,7 @@ section h2 {
             transform: rotate(360deg);
   }
 }
-@-webkit-keyframes prixClipFix {
+@-webkit-keyframes prixClipFix { /* Animation des polygon du loader avec 3 étapes */
   0% {
     -webkit-clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
             clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
@@ -340,7 +362,7 @@ section h2 {
             clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
 }
-@keyframes prixClipFix {
+@keyframes prixClipFix { /* Animation des polygon du loader avec 3 étapes */
   0% {
     -webkit-clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
             clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
@@ -354,7 +376,7 @@ section h2 {
             clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
 }
-@-webkit-keyframes apparaitre {
+@-webkit-keyframes apparaitre              /* Animation pour like */ {
   from {
     opacity: 0;
   }
@@ -362,7 +384,7 @@ section h2 {
     opacity: 1;
   }
 }
-@keyframes apparaitre {
+@keyframes apparaitre              /* Animation pour like */ {
   from {
     opacity: 0;
   }
@@ -370,7 +392,23 @@ section h2 {
     opacity: 1;
   }
 }
-@-webkit-keyframes appear {
+@-webkit-keyframes disparaitre              /* Animation pour like */ {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes disparaitre              /* Animation pour like */ {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes appear              /* Animation pour loader */ {
   from {
     visibility: hidden;
   }
@@ -378,7 +416,7 @@ section h2 {
     visibility: visible;
   }
 }
-@keyframes appear {
+@keyframes appear              /* Animation pour loader */ {
   from {
     visibility: hidden;
   }
@@ -386,7 +424,7 @@ section h2 {
     visibility: visible;
   }
 }
-@-webkit-keyframes disappear {
+@-webkit-keyframes disappear              /* Animation pour loader */ {
   from {
     display: block;
   }
@@ -394,7 +432,7 @@ section h2 {
     display: none;
   }
 }
-@keyframes disappear {
+@keyframes disappear              /* Animation pour loader */ {
   from {
     display: block;
   }
@@ -501,7 +539,7 @@ footer .list_footer i {
 
 /* RESPONSIVE */
 @media (min-width: 767.98px) {
-  footer {
+  footer { /* Alignement du footer par la droite et en une ligne */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -544,6 +582,8 @@ footer .list_footer i {
   font-size: 16px;
   font-weight: 500;
   padding: 13px 18.75px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .basic-button:hover {
@@ -624,16 +664,16 @@ footer .list_footer i {
   width: 25px;
   opacity: 0;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text; /* Faire apparaitre que l'intérieur de l'icone */
+  -webkit-text-fill-color: transparent; /* Brackground linear sur l'icone */
+  -webkit-animation: disparaitre 1s;
+          animation: disparaitre 1s; /* Animation au retour du hover */
 }
-.menu-container .like-content2 i:hover {
+.menu-container .like-content2 i:hover { /* Animation sur le hover du like */
   -webkit-animation: apparaitre 1s;
           animation: apparaitre 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }
 .menu-container .menu-content {
   display: -webkit-box;
@@ -676,6 +716,8 @@ footer .list_footer i {
           flex-direction: column;
   padding: 12px 0;
   width: 80%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .menu-container .menu-content .menu-plat .menu-name h3 {
   font-size: 18px;
@@ -706,6 +748,8 @@ footer .list_footer i {
           align-items: flex-end;
   padding: 12px 0;
   width: 20%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .menu-container .menu-content .menu-plat .price p {
   font-size: 15px;
@@ -728,20 +772,16 @@ footer .list_footer i {
   background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .menu-container .menu-content .menu-plat .select-button i {
   font-size: 20px;
   color: white;
 }
 
-.title-menu i:hover {
-  -webkit-animation: like 1s;
-          animation: like 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.menu-plat:hover .select-button {
+.menu-plat:hover { /* Animation au survol des plats*/ }
+.menu-plat:hover .select-button { /* Case verte avec icone selected*/
   -webkit-animation: move 1s;
           animation: move 1s;
   -webkit-animation-fill-mode: forwards;
@@ -751,7 +791,7 @@ footer .list_footer i {
   -webkit-transition: ease-out 1s;
   transition: ease-out 1s;
 }
-.menu-plat:hover .price {
+.menu-plat:hover .price { /* Déplacement du prix */
   -webkit-animation: width2 1s;
           animation: width2 1s;
   -webkit-animation-fill-mode: forwards;
@@ -761,7 +801,7 @@ footer .list_footer i {
   -webkit-transition: ease-out 1s;
   transition: ease-out 1s;
 }
-.menu-plat:hover .menu-name {
+.menu-plat:hover .menu-name { /* Gestion largeur du nom du menu */
   -webkit-animation: width1 1s;
           animation: width1 1s;
   -webkit-animation-fill-mode: forwards;
@@ -881,6 +921,14 @@ footer .list_footer i {
     opacity: 1;
   }
 }
+@keyframes disparaitre {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* RESPONSIVE */
 @media (min-width: 767.98px) {
   body {
@@ -902,4 +950,4 @@ footer .list_footer i {
     max-width: 634px;
     width: 100%;
   }
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=style.css.map */

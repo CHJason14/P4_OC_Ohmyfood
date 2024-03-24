@@ -46,15 +46,14 @@
         width: 25px;
         opacity: 0;
         background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+        -webkit-background-clip: text;              /* Faire apparaitre que l'intérieur de l'icone */
+        -webkit-text-fill-color: transparent;              /* Brackground linear sur l'icone */
+        animation: disparaitre 1s;              /* Animation au retour du hover */
     }
     
-    .like-content2 i:hover {
+    .like-content2 i:hover {              /* Animation sur le hover du like */
         animation: apparaitre 1s;
         animation-fill-mode: forwards;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
     }
 
     .menu-content {
@@ -87,6 +86,7 @@
                 flex-direction: column;
                 padding: 12px 0;
                 width: 80%;
+                transition: all 1s;
 
                 h3 {
                     font-size: 18px;
@@ -114,6 +114,7 @@
                 align-items: flex-end;
                 padding: 12px 0;
                 width: 20%;
+                transition: all 1s;
 
                 p {
                 font-size: 15px;
@@ -132,6 +133,7 @@
                 background-color: #99E2D0;
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
+                transition: all 1s;
 
                 i {
                     font-size: 20px;
@@ -142,27 +144,22 @@
     }
 }
 
-.title-menu i:hover {
-    animation: like 1s;
-    animation-fill-mode: forwards;
-}
-
-.menu-plat:hover {
-    .select-button {
+.menu-plat:hover {              /* Animation au survol des plats*/
+    .select-button {              /* Case verte avec icone selected*/
         animation: move 1s;
         animation-fill-mode: forwards;
         transform: translateX(-60px);
         transition: ease-out 1s;
     }
 
-    .price {
+    .price {              /* Déplacement du prix */
         animation: width2 1s;
         animation-fill-mode: forwards;
         transform: translateX(-60px);
         transition: ease-out 1s;
     }
 
-    .menu-name {
+    .menu-name {              /* Gestion largeur du nom du menu */
         animation: width1 1s;
         animation-fill-mode: forwards;
     }
@@ -249,6 +246,17 @@
     to
     {
         opacity: 1;
+    }
+}
+
+@keyframes disparaitre
+{
+    from {
+        opacity: 1;
+    }
+    to
+    {
+        opacity: 0;
     }
 }
 

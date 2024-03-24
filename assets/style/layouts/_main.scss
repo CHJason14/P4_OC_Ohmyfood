@@ -7,8 +7,13 @@ section {
     }
 }
 
+
 .instruction {
     background-color: white;
+    visibility: hidden;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
 
     .step-container {
         display: flex;
@@ -28,6 +33,9 @@ section {
                 color: white;
                 background-color: $color1;
                 border-radius: 50px;
+                padding: 3px;
+                padding-bottom: 2px;
+                padding-top: 4px;
                 width: 24px;
                 height: 24px;
                 text-align: center;
@@ -49,6 +57,10 @@ section {
 .restaurant-container {
     background-color: #F6F6F6;
     position: relative;
+    visibility: hidden;
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
 
     .restaurants-cards {
         display: flex;
@@ -59,10 +71,6 @@ section {
             display: flex;
             flex-direction: column;
             width: 100%;
-            visibility: hidden;
-            animation: appear 2s;
-            animation-fill-mode: forwards;
-            animation-delay: 3s;
         }
 
         a {
@@ -157,32 +165,34 @@ section {
     width: 25px;
     opacity: 0;
     background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;              /* Faire apparaitre que l'intérieur de l'icone */
+    -webkit-text-fill-color: transparent;              /* Brackground linear sur l'icone */
+    animation: disparaitre 1s;
 }
 
-.like-content2 i:hover {
+.like-content2 i:hover {               /* Animation du like au hover */
     animation: apparaitre 1s;
     animation-fill-mode: forwards;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
 }
 
-.loader-container {
+.loader-container {               /* Position du loader au centre de la page et animation d'une durée de 3s */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-75px);
     animation: disappear;
     animation-fill-mode: forwards;
     animation-delay: 3s;
 }
 
-.loader {
-        width: 90px;
-        height: 90px;
+.loader {               /* Loader */
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         position: absolute;
-        top: 40%;
         animation: rotate 1s linear infinite
       }
-.loader::before , .loader::after {
+.loader::before , .loader::after {               /* Barre grise du loader */
         content: "";
         box-sizing: border-box;
         position: absolute;
@@ -191,23 +201,23 @@ section {
         border: 5px solid #7E7E7E;
         animation: prixClipFix 2s linear infinite ;
       }
-.loader::after{
+.loader::after{               /* Barre rose du loader */
         inset: 8px;
         transform: rotate3d(90, 90, 0, 180deg );
         border-color: #a980db;
       }
 
-@keyframes rotate {
+@keyframes rotate {              /* Animation Rotation du loader */
         0%   {transform: rotate(0deg)}
         100%   {transform: rotate(360deg)}
       }
-@keyframes prixClipFix {
+@keyframes prixClipFix {              /* Animation des polygon du loader avec 3 étapes */
         0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
         50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
         75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
     }
 
-@keyframes apparaitre
+@keyframes apparaitre              /* Animation pour like */
     {
         from {
             opacity: 0;
@@ -218,7 +228,18 @@ section {
         }
     }
 
-@keyframes appear
+@keyframes disparaitre              /* Animation pour like */
+    {
+        from {
+            opacity: 1;
+        }
+        to
+        {
+            opacity: 0;
+        }
+    }
+
+@keyframes appear              /* Animation pour loader */
     {
         from {
             visibility: hidden;
@@ -229,7 +250,7 @@ section {
         }
     }
 
-@keyframes disappear
+@keyframes disappear              /* Animation pour loader */
     {
         from {
             display: block;
