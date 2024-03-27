@@ -86,7 +86,7 @@
                 flex-direction: column;
                 padding: 12px 0;
                 width: 80%;
-                transition: all 1s;
+                transition: all $time1;
 
                 h3 {
                     font-size: 18px;
@@ -114,7 +114,7 @@
                 align-items: flex-end;
                 padding: 12px 0;
                 width: 20%;
-                transition: all 1s;
+                transition: all $time1;
 
                 p {
                 font-size: 15px;
@@ -133,7 +133,7 @@
                 background-color: #99E2D0;
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
-                transition: all 1s;
+                transition: all $time1;
 
                 i {
                     font-size: 20px;
@@ -146,21 +146,21 @@
 
 .menu-plat:hover {              /* Animation au survol des plats*/
     .select-button {              /* Case verte avec icone selected*/
-        animation: move 1s;
+        animation: move 1.5s;
         animation-fill-mode: forwards;
         transform: translateX(-60px);
         transition: ease-out 1s;
     }
 
     .price {              /* Déplacement du prix */
-        animation: width2 1s;
+        animation: width2 1.5s;
         animation-fill-mode: forwards;
         transform: translateX(-60px);
         transition: ease-out 1s;
     }
 
     .menu-name {              /* Gestion largeur du nom du menu */
-        animation: width1 1s;
+        animation: width1 1.5s;
         animation-fill-mode: forwards;
     }
 }

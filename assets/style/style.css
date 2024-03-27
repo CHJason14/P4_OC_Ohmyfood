@@ -291,12 +291,10 @@ section h2 {
   left: 50%;
   -webkit-transform: translateX(-75px);
           transform: translateX(-75px);
-  -webkit-animation: disappear;
-          animation: disappear;
+  -webkit-animation: disappear 3s;
+          animation: disappear 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
 }
 
 .loader { /* Loader */
@@ -716,8 +714,8 @@ footer .list_footer i {
           flex-direction: column;
   padding: 12px 0;
   width: 80%;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 .menu-container .menu-content .menu-plat .menu-name h3 {
   font-size: 18px;
@@ -748,8 +746,8 @@ footer .list_footer i {
           align-items: flex-end;
   padding: 12px 0;
   width: 20%;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 .menu-container .menu-content .menu-plat .price p {
   font-size: 15px;
@@ -772,8 +770,8 @@ footer .list_footer i {
   background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 .menu-container .menu-content .menu-plat .select-button i {
   font-size: 20px;
@@ -782,8 +780,8 @@ footer .list_footer i {
 
 .menu-plat:hover { /* Animation au survol des plats*/ }
 .menu-plat:hover .select-button { /* Case verte avec icone selected*/
-  -webkit-animation: move 1s;
-          animation: move 1s;
+  -webkit-animation: move 1.5s;
+          animation: move 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-transform: translateX(-60px);
@@ -792,8 +790,8 @@ footer .list_footer i {
   transition: ease-out 1s;
 }
 .menu-plat:hover .price { /* Déplacement du prix */
-  -webkit-animation: width2 1s;
-          animation: width2 1s;
+  -webkit-animation: width2 1.5s;
+          animation: width2 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-transform: translateX(-60px);
@@ -802,8 +800,8 @@ footer .list_footer i {
   transition: ease-out 1s;
 }
 .menu-plat:hover .menu-name { /* Gestion largeur du nom du menu */
-  -webkit-animation: width1 1s;
-          animation: width1 1s;
+  -webkit-animation: width1 1.5s;
+          animation: width1 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }

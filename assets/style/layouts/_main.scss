@@ -180,9 +180,8 @@ section {
     top: 30%;
     left: 50%;
     transform: translateX(-75px);
-    animation: disappear;
+    animation: disappear 3s;
     animation-fill-mode: forwards;
-    animation-delay: 3s;
 }
 
 .loader {               /* Loader */
